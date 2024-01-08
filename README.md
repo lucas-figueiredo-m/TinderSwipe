@@ -2,6 +2,8 @@
 
 This app reproduces the swipe feature from Tinder's app.
 
+![](https://github.com/lucas-figueiredo-m/TinderSwipe/blob/main/src/assets/demo-gif.gif)
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
