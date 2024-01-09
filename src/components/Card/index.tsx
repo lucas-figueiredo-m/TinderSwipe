@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { GestureDetector } from 'react-native-gesture-handler';
 import Animated, { SharedValue } from 'react-native-reanimated';
 import { CARD_HEIGHT, CARD_WIDHT, useSwipeCard } from './useSwipeCard';
@@ -9,6 +9,7 @@ type CardProps = {
   numOfCards: number;
   image: string;
   name: string;
+  id: number;
   activeCardIndex: SharedValue<number>;
   onLike: () => void;
   onDislike: () => void;
@@ -20,6 +21,7 @@ export const Card: React.FC<CardProps> = ({
   numOfCards,
   image,
   name,
+  id,
   activeCardIndex,
   onLike,
   onDislike,
@@ -39,7 +41,11 @@ export const Card: React.FC<CardProps> = ({
     <GestureDetector gesture={gesture}>
       <Animated.View style={[styles.root, cardAnimation]}>
         <TouchableOpacity activeOpacity={0.95} onPress={onCardPress}>
-          <Image source={{ uri: image }} style={styles.image} />
+          <Animated.Image
+            source={{ uri: image }}
+            style={styles.image}
+            sharedTransitionTag={`crush-${id}`}
+          />
           <View style={styles.container}>
             <Animated.View
               style={[

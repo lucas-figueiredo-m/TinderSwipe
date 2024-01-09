@@ -37,6 +37,7 @@ export const Home: React.FC = () => {
         {cardList.map((card, index) => (
           <Card
             key={card.id}
+            id={card.id}
             cardIndex={index}
             numOfCards={cards.length}
             image={card.image}
